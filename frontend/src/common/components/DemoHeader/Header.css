@@ -1,0 +1,32 @@
+.demo-header {
+    width: 100%;
+    background-color: #252422f0;
+    display: flex;
+    flex-direction: row;
+}
+
+.demo-header .demo-header-logo {
+    margin: 10px;
+}
+
+.demo-header-links {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.demo-header-links a {
+    color: #CCC5B9;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.demo-header-links a:hover,
+.demo-header-links a:focus {
+    color: #CCC5B970;
+}
+
+.demo-header-links li {
+    list-style: none;
+    margin: 10px 20px 0 30px;
+}
