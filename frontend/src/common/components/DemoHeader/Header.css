@@ -1,6 +1,6 @@
 .demo-header {
     width: 100%;
-    background-color: #252422f0;
+    background-color: #114B5F;
     display: flex;
     flex-direction: row;
 }
@@ -16,14 +16,15 @@
 }
 
 .demo-header-links a {
-    color: #CCC5B9;
+    color: #7D9CA7;
     font-size: 20px;
+    font-weight: 500;
     text-decoration: none;
 }
 
 .demo-header-links a:hover,
 .demo-header-links a:focus {
-    color: #CCC5B970;
+    color: #7D9CA770;
 }
 
 .demo-header-links li {
