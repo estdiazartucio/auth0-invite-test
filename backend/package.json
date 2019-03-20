@@ -9,6 +9,8 @@
   "author": "Estefania Diaz Artucio",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "last-fm": "^5.2.2"
   }
 }
