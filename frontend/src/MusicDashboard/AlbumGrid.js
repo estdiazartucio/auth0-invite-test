@@ -8,12 +8,15 @@ const AlbumGrid = props => {
     }
 
     const renderAlbums = () => {
-        return props.albumsList.map(album => 
-            <div key={album.mbid} className='tile-album'>
+        return props.albumsList.map( (album, index) => 
+            <div key={index} className='tile-album'>
                 <div className='tile-title'>
                     {album.name}
                 </div>
-                <img src={getAlbumImage(album, 'large')} alt={album.name} />
+                <img src={getAlbumImage(album, 'large')} alt={album.name} className='tile-album-art' />
+                <div className='tile-footer'>
+                    {album.artist.name}
+                </div>
             </div>
         );
     }

@@ -2,20 +2,45 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
+    margin-bottom: 5%;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
 }
 
 .container-grid-album .tile-album {
-    width: 220px;
-    height: 240px;
-    padding: 5px;
+    width: 280px;
+    height: 300px;
     text-align: center;
     background-color: #CCC5B9;
     margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 5px 6px 10px #ccc;
 }
 
 .tile-album .tile-title {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    height: 15%;
+    width: 100%;
+    background-color: #d9d4cc;
+    font-weight: 550;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.tile-album .tile-album-art {
+    align-self: center;
+}
+
+.tile-album .tile-footer {
+    height: 15%;
+    margin: 2px;
+    padding-top: 5px;
+    font-size: 15px;
+    text-align: center;
 }

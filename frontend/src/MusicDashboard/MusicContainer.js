@@ -15,7 +15,7 @@ class MusicContainer extends React.Component {
     async componentDidMount() {
         let albums = await api.getAlbumsList();
         this.setState({
-            albumsList: albums.data.album.slice(0, 28),
+            albumsList: albums.data.album.slice(0, 35),
         });
     }
 
