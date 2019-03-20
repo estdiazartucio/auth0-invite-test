@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from '../common/components/DemoHeader/Header.js';
+import AlbumGrid from './AlbumGrid.js';
+import api from '../common/services/api.js';
 import './Music.css';
 
 class MusicContainer extends React.Component {
@@ -10,10 +12,18 @@ class MusicContainer extends React.Component {
         };
     }
 
+    async componentDidMount() {
+        let albums = await api.getAlbumsList();
+        this.setState({
+            albumsList: albums.data.album.slice(0, 28),
+        });
+    }
+
     render() {
         return(
             <React.Fragment>
                 <Header />
+                <AlbumGrid albumsList={this.state.albumsList} />
             </React.Fragment>
         );
     }
