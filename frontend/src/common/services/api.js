@@ -8,6 +8,12 @@ const getAlbumsList = async () => {
         .get('http://localhost:8000/api/music/albums');
 }
 
+const getAllUsers = async () => {
+    return Axios
+        .get('http://localhost:8000/api/users');
+}
+
 export default {
     getAlbumsList,
+    getAllUsers
 }

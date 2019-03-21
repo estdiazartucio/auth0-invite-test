@@ -1,0 +1,32 @@
+.user-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 20px 0 20px;
+}
+
+.user-toolbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.user-list-container {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f3e9d2;
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px #444;
+}
+
+.user-list-row {
+    color: #444;
+    border-top: solid 2px #444;
+    line-height: 55px;
+}
+
+.user-list-row:first-child{
+    border-top: none;
+    font-weight: 500;
+    color: #403D39;
+}

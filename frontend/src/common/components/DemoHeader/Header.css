@@ -1,9 +1,10 @@
 .demo-header {
     width: 100%;
-    background-color: #114B5F;
+    /*background-color: #114B5F;*/
     background: linear-gradient(267.12deg,/* #678C99 0%,*/ #114B5F 25%, #0A2939 100%);
     display: flex;
     flex-direction: row;
+    /*border-bottom: solid 2px #403D39;*/
 }
 
 .demo-header .demo-header-logo {
