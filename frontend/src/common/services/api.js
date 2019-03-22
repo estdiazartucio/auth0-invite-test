@@ -13,7 +13,13 @@ const getAllUsers = async () => {
         .get('http://localhost:8000/api/users');
 }
 
+const inviteUser = async userData => {
+    return Axios
+        .post('http://localhost:8000/api/users/create', userData);
+}; 
+
 export default {
     getAlbumsList,
-    getAllUsers
+    getAllUsers,
+    inviteUser
 }

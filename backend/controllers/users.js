@@ -40,11 +40,6 @@ const createUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
     let users = await userDao.getAllUsers();
-    users = [
-        {username: 'randomUser', email: 'example@mail.com', id: 1},
-        {username: 'randomUser2', email: 'example2@mail.com', id: 2},
-        {username: 'randomUser3', email: 'example3@mail.com', id: 3}
-    ]
     res.json(users);
 };
 

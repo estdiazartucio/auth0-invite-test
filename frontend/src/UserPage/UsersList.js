@@ -4,7 +4,7 @@ import './UserPage.css';
 const UsersList = props => {
     const renderRows = () => {
         return props.users.map(user => 
-            <div className='user-list-row'>
+            <div className='user-list-row' key={user.id}>
                 {user.email}
             </div>
         )

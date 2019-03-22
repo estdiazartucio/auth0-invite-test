@@ -5,7 +5,8 @@ import './UserPage.css';
 const UserToolbar = props => {
     return(
         <div className='user-toolbar-container'>
-            <RoundButton>Create New User</RoundButton>
+            <input type='email' className='input-invite-user' name='email' placeholder='example@mail.com' value={props.inputValue} onChange={props.onInputChange} />
+            <RoundButton onClick={props.onClick}>Invite New User</RoundButton>
         </div>
     );
 };

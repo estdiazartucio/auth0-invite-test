@@ -11,6 +11,16 @@
     justify-content: flex-end;
 }
 
+.user-toolbar-container .input-invite-user {
+    margin-right: 10px;
+    width: 400px;
+    border: solid 1.5px #777;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px;
+    background-color: #f8f3e6;
+}
+
 .user-list-container {
     margin-top: 30px;
     padding: 10px;
@@ -29,4 +39,5 @@
     border-top: none;
     font-weight: 500;
     color: #403D39;
+    font-size: 18px;
 }
