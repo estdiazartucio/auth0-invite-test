@@ -14,7 +14,7 @@
 .user-toolbar-container .input-invite-user {
     margin-right: 10px;
     width: 400px;
-    border: solid 1.5px #777;
+    border: solid 1.5px #444;
     border-radius: 4px;
     font-size: 15px;
     padding: 5px;
@@ -33,11 +33,49 @@
     color: #444;
     border-top: solid 2px #444;
     line-height: 55px;
+    display: flex;
+    flex-direction: row;
 }
 
 .user-list-row:first-child{
     border-top: none;
     font-weight: 500;
-    color: #403D39;
+    /*color: #403D39;*/
+    color: #114B5F;
     font-size: 18px;
+}
+
+.user-list-column {
+    width: 30%;
+    padding-right: 15px;
+}
+
+.user-list-column:first-child {
+    width: 5%;
+}
+
+.user-list-column img {
+    height: 35px;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+@media(max-width: 600px) and (orientation: portrait) {
+    .user-list-row {
+        flex-wrap: wrap;
+    }
+
+    .user-list-column img {
+        vertical-align: middle;
+        margin-left: 0;
+    }
+
+    .user-list-column {
+        margin-right: 20px;
+        width: 70%;
+    }
+
+    .user-list-row:first-child {
+        flex-wrap: nowrap;
+    }
 }
