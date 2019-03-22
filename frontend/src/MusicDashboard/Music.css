@@ -1,3 +1,12 @@
+.album-grid-buttons {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
 .container-grid-album {
     margin-left: 5%;
     margin-right: 5%;
@@ -37,6 +46,7 @@
 .tile-album .tile-album-art {
     align-self: center;
     box-shadow: 5px 6px 10px #000;
+    width: 175px;
 }
 
 .tile-album .tile-footer {
