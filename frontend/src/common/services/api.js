@@ -18,8 +18,13 @@ const inviteUser = async userData => {
         .post('http://localhost:8000/api/users/create', userData);
 }; 
 
+const addAlbum = async albumData => {
+    return Axios.post('http://localhost:8000/api/music/addAlbum', albumData);
+}
+
 export default {
     getAlbumsList,
     getAllUsers,
-    inviteUser
+    inviteUser,
+    addAlbum
 }

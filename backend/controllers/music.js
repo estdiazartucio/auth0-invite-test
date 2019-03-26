@@ -35,15 +35,21 @@ const addAlbum = async (req, res) => {
                 resolve(data);
             })
         });
-
-        albumDao.addAlbum(requestedAlbum);
+        let img = requestedAlbum.images ? requestedAlbum.images[requestedAlbum.images.length - 1] : null;
+        requestedAlbum.img = img;
+        let savedAlbum = await albumDao.addAlbum(requestedAlbum);
+        res.json({
+            id: savedAlbum.id,
+            artist: requestedAlbum.artistName,
+            image: img,
+            name: requestedAlbum.name,
+        });
     }
     catch(e) {
         res.status(500).send({
-            message: 'An error has occured'
+            message: 'An error has occured: ' + e.message
         });
     }
-    res.send('Album added successfully');
 }
 
 module.exports = {

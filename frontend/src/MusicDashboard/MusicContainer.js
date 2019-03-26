@@ -12,9 +12,15 @@ class MusicContainer extends React.Component {
             albumsList : [],
             usersPick: [],
             showTop10: true,
+            showAlbumForm: false,
+            newAlbumName: '',
+            newAlbumArtist: '',
         };
         this.getTopTen = this.getTopTen.bind(this);
         this.switchView = this.switchView.bind(this);
+        this.renderForm = this.renderForm.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
+        this.submitAlbum = this.submitAlbum.bind(this);
     }
 
     getTopTen() {
@@ -26,6 +32,42 @@ class MusicContainer extends React.Component {
 
     switchView() {
         this.setState(prevState => ({showTop10: !prevState.showTop10}));
+    }
+
+    renderForm() {
+        this.setState(prevState => ({
+            ...prevState,
+            showAlbumForm: !prevState.showAlbumForm,
+            newAlbumArtist: '',
+            newAlbumName: '',
+        }));
+    }
+
+    onInputChange(e) {
+        let value = e.target.value;
+        let fieldName = e.target.name;
+        this.setState(prevState => ({
+            ...prevState,
+            [fieldName]: value,
+        }))
+    }
+
+    async submitAlbum() {
+        if(this.state.newAlbumArtist.length > 0 && this.state.newAlbumArtist.length > 0) {
+            try {
+                let newAlbumResponse = await api.addAlbum({
+                    artist: this.state.newAlbumArtist,
+                    albumName: this.state.newAlbumName,
+                });
+                this.setState(prevState => ({
+                    ...prevState,
+                    usersPick: [...prevState.usersPick, newAlbumResponse.data]
+                }));
+            }
+            catch(e){
+                console.log(e);
+            }
+        }
     }
 
     async componentDidMount() {
@@ -41,8 +83,17 @@ class MusicContainer extends React.Component {
         return(
             <React.Fragment>
                 <Header />
-                <div className='album-grid-buttons'>
-                    <RoundButton onClick={this.switchView}>{this.state.showTop10 ? 'Top 10' : 'Picked by Users'}</RoundButton>
+                <div className='album-grid-toolbar'>
+                    <div className='album-grid-buttons'>
+                        <RoundButton onClick={this.switchView}>{this.state.showTop10 ? 'Picked by Users' : 'Top 10'}</RoundButton>
+                        {!this.state.showTop10 ? <RoundButton onClick={this.renderForm}>Add Album</RoundButton> : null}
+                    </div>
+                    {this.state.showAlbumForm ? 
+                        <div className='add-album-form'>
+                            <input type='text' placeholder='Album Name' name='newAlbumName' onChange={this.onInputChange} value={this.state.newAlbumName} />
+                            <input type='text' placeholder='Artist Name' name='newAlbumArtist' onChange={this.onInputChange} value={this.state.newAlbumArtist} />
+                            <RoundButton onClick={this.submitAlbum}>Add</RoundButton>
+                        </div> : null}
                 </div>
                 <AlbumGrid albumsList={albumList} />
             </React.Fragment>
